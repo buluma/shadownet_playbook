@@ -1,0 +1,21 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: buluma
+  description: Linux Server installation and configuration.
+  company: "ShadowNet"
+  license: "license (GNU)"
+  min_ansible_version: 1.8
+  platforms:
+  - name: EL
+    versions:
+      - 6
+  - name: Ubuntu
+    versions:
+      - precise
+      - trusty
+  galaxy_tags:
+    - web
+    - networking
+    - cloud
