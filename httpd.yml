@@ -1,0 +1,10 @@
+## PLAYBOOK TO INSTALL AND CONFIGURE APACHE HTTP ON Servers
+- hosts: all
+  tasks:
+   - name: Install Apache httpd
+     yum: pkg=httpd state=installed
+     notify:
+       - Start Httpd
+  handlers:
+    - name: Start httpd
+      service: name=httpd state=started

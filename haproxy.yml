@@ -1,0 +1,5 @@
+- name: install haproxy
+  hosts: balancer
+  sudo: yes
+  roles:
+    - buluma.haproxy
