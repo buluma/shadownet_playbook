@@ -37,3 +37,8 @@ script:
 
 #notifications:
 #  webhooks: https://galaxy.ansible.com/api/v1/notifications/
+notifications:
+  slack:
+    rooms:
+      - gbckenya:YmOMhqL9O6UHSSG1vrdkQXkL#general
+      - gbckenya:YmOMhqL9O6UHSSG1vrdkQXkL#ansible
