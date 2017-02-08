@@ -40,6 +40,7 @@ script:
 notifications:
   slack:
     on_success: always
+    on_failure: always
     rooms:
       - gbckenya:YmOMhqL9O6UHSSG1vrdkQXkL#general
       - gbckenya:YmOMhqL9O6UHSSG1vrdkQXkL#ansible
