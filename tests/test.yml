@@ -1,0 +1,44 @@
+---
+- hosts: localhost
+  become: true
+  tasks:
+    - name: Install Apache
+      yum: name=httpd24 state=latest
+      notify:
+       - Start Apache
+
+    - name: Install MySQL
+      yum: name=mysql-server state=latest
+      notify:
+       - Start MySQL
+    - name: Install PHP
+      yum: name=php56 state=latest
+
+    - name: Install phpMyAdmin
+      yum: name=phpMyAdmin state=latest
+
+    - name: Install lynis
+      yum: name=lynis state=latest
+
+    - name: Install php-mysql
+      yum: name=php-mysql state=latest
+
+    - name: Install chkrootkit
+      yum: name=chkrootkit state=latest
+
+    - name: Install rkhunter
+      yum: name=rkhunter state=latest
+
+    - name: Install tripwire
+      yum: name=tripwire state=latest
+
+    - name: Install git
+      yum: name=git state=latest
+  roles:
+#    - ansible-role-php
+
+  handlers:
+    - name: Start Apache
+      service: name=httpd state=started enabled=yes
+    - name: Start MySQL
+      service: name=mysqld state=started enabled=yes
