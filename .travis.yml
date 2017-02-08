@@ -33,8 +33,8 @@ script:
   #Print out test file
   # - 'docker exec "$(cat ${container_id})" /etc/ansible/roles/role_under_test/tests/test.yml'
   
-  # Test role.
-  - 'docker exec "$(cat ${container_id})" ansible-playbook /etc/ansible/roles/role_under_test/tests/test.yml -vvv'
+  # Test role. 
+  #- 'docker exec "$(cat ${container_id})" ansible-playbook /etc/ansible/roles/role_under_test/tests/test.yml -vvv'
 
   # Test role idempotence.
   - idempotence=$(mktemp)
