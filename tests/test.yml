@@ -12,7 +12,7 @@
       notify:
        - Start MySQL
     - name: Install PHP
-      yum: name=php56 state=latest
+      yum: name=php state=latest
 
     - name: Install phpMyAdmin
       yum: name=phpMyAdmin state=latest
