@@ -1,0 +1,4 @@
+---
+#- name: Ensure HAProxy is installed (RedHat).
+#  yum: name=haproxy state=installed
+#  when: ansible_os_family == 'RedHat'
