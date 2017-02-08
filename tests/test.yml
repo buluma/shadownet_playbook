@@ -3,7 +3,7 @@
   become: true
   tasks:
     - name: Install Apache
-      yum: name=httpd24 state=latest
+      yum: name=httpd state=latest
       notify:
        - Start Apache
 
