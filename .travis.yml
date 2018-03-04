@@ -8,12 +8,12 @@ env:
 
 before_install:
   # Pull container.
-  - 'docker pull geerlingguy/docker-${distro}-ansible:latest'
+  - 'docker pull buluma/docker-${distro}-ansible:latest'
 
 script:
   - container_id=$(mktemp)
   # Run container in detached state.
-  - 'docker run --detach --volume="${PWD}":/etc/ansible/roles/role_under_test:ro ${run_opts} geerlingguy/docker-${distro}-ansible:latest "${init}" > "${container_id}"'
+  - 'docker run --detach --volume="${PWD}":/etc/ansible/roles/role_under_test:ro ${run_opts} buluma/docker-${distro}-ansible:latest "${init}" > "${container_id}"'
 
   # Ansible syntax check.
   - 'docker exec --tty "$(cat ${container_id})" env TERM=xterm ansible-playbook /etc/ansible/roles/role_under_test/tests/test.yml --syntax-check'
@@ -35,16 +35,15 @@ script:
   # Make sure php is installed.
   - 'docker exec --tty "$(cat ${container_id})" env TERM=xterm php -v'
 
-#notifications:
-#  webhooks: https://galaxy.ansible.com/api/v1/notifications/
 notifications:
-  slack:
-    on_success: always
-    on_failure: always
-    rooms:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
+#  slack:
+#    on_success: always
+#    on_failure: always
+#    rooms:
       - gbckenya:YmOMhqL9O6UHSSG1vrdkQXkL#travis-ci
   email:
     recipients:
-      - me@buluma.me.ke
+      - me@buluma.co.ke
     on_success: always # default: change
     on_failure: always # default: always
