@@ -41,7 +41,7 @@ notifications:
 #    on_success: always
 #    on_failure: always
 #    rooms:
-      - gbckenya:YmOMhqL9O6UHSSG1vrdkQXkL#travis-ci
+#      - gbckenya:YmOMhqL9O6UHSSG1vrdkQXkL#travis-ci
   email:
     recipients:
       - me@buluma.co.ke
