@@ -10,9 +10,7 @@ name: Release
   pull_request:
   push:
     branches:
-      - main
-  schedule:
-    - cron: "10 1 * *"
+      - master
 
 defaults:
   run:
